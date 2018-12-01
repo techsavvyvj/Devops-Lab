@@ -1,26 +1,28 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace HelloWorldSample
+namespace HelloWorldSample.WebClient
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Content/node_modules/jquery/dist/jquery.js"));
+            var headerScriptBundle = new ScriptBundle("~/bundles/scripts/header").Include(
+                "~/Content/scripts/libs/modernizr-*"
+            );
+            var footerScriptBundle = new ScriptBundle("~/bundles/scripts/footer").Include(
+                "~/Content/node_modules/jquery/dist/jquery.js",
+                "~/Content/node_modules/bootstrap/dist/js/bootstrap.js",
+                "~/Content/node_modules/vue/dist/vue.js",
+                "~/Content/node_modules/vue-simple-spinner/dist/vue-simple-spinner.js"
+            );
+            var headerStyleBundle = new StyleBundle("~/bundles/styles/header").Include(
+                "~/Content/styles/libs/bootstrap.css",
+                "~/Content/styles/site.css"
+            );
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Ĉontent/modernizr-*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Content/node_modules/bootstrap/dist/js/bootstrap.js"));
-
-            bundles
-                .Add(new StyleBundle("~/Content/css")
-                .Include(
-                      "~/Content/node_modules/bootstrap/dist/css/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(headerStyleBundle);
+            bundles.Add(headerScriptBundle);
+            bundles.Add(footerScriptBundle);
         }
     }
 }

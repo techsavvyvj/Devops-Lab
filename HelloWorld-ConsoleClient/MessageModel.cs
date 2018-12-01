@@ -1,4 +1,4 @@
-﻿namespace HelloWorld_ConsoleClient
+﻿namespace HelloWorld.ConsoleClient
 {
     /// <summary>
     /// The message model.

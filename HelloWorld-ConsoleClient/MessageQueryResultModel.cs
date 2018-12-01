@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HelloWorld_ConsoleClient
+namespace HelloWorld.ConsoleClient
 {
     /// <summary>
     /// The result body model to send back to an api request for a Message item.

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{806CC721-9557-470E-BE11-8726A12B7B57}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HelloWorld_ConsoleClient</RootNamespace>
+    <RootNamespace>HelloWorld.ConsoleClient</RootNamespace>
     <AssemblyName>HelloWorld-ConsoleClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -1,4 +1,4 @@
-﻿namespace HelloWorld_ConsoleClient
+﻿namespace HelloWorld.ConsoleClient
 {
     /// <summary>
     /// The different statuses a request for a Message may have.

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using HelloWorld.API.Engine.Interfaces;
 using HelloWorld.API.Engine.Models;
 
@@ -41,6 +42,7 @@ namespace HelloWorld.API.Controllers
         /// <param name="apiKey"></param>
         /// <returns></returns>
         [HttpGet]
+        [EnableCors("*", "*", "GET")]
         public IHttpActionResult Get(string apiKey)
         {
             try

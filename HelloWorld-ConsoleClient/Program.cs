@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Console = System.Console;
 
-namespace HelloWorld_ConsoleClient
+namespace HelloWorld.ConsoleClient
 {
     public class Program
     {
