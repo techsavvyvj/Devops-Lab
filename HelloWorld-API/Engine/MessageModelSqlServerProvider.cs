@@ -58,13 +58,13 @@ namespace HelloWorld.API.Engine
 
             if (string.IsNullOrWhiteSpace(messageQueryModel.ApiKey))
             {
-                throw new ArgumentException($"{nameof(queryParametersModel)} query model does not contain any filtering");
+                throw new ArgumentException($"{nameof(queryParametersModel)} parameter does not contain any filtering");
             }
 
             // apiKeys are SHA512 hashed - all keys should be exactly 128 chars long
             if (messageQueryModel.ApiKey.Length != 128)
             {
-                throw new ArgumentException($"{nameof(queryParametersModel)} query model contains improperly formatted filter");
+                throw new ArgumentException($"{nameof(queryParametersModel)} parameter contains improperly formatted filter");
             }
 
             if (string.IsNullOrWhiteSpace(_connectionString))

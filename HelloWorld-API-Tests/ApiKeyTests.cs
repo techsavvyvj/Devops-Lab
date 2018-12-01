@@ -17,7 +17,6 @@ namespace HelloWorld.API.Tests
     public class ApiKeyTests
     {
         private readonly IConfigurationRoot _config;
-        private readonly string _connectionString;
         private readonly MessageModelSqlServerProvider _provider;
         private readonly MessageModelToMessageGetResultMapper _resultMapper;
 
@@ -26,12 +25,13 @@ namespace HelloWorld.API.Tests
             var dataDirectory = Path.GetFullPath($"{Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()))}\\..\\..\\HelloWorld-API\\App_Data\\");
 
             _config = new ConfigurationBuilder().AddJsonFile("test-configs.json").Build();
-            _connectionString = _config["connectionString"].Replace("|DataDirectory|", dataDirectory);
+
+            var connectionString = _config["connectionString"].Replace("|DataDirectory|", dataDirectory);
 
             // create system under test
             var parametersMapper = new MessageQueryModelToDynamicParametersMapper();
 
-            _provider = new MessageModelSqlServerProvider(_connectionString, parametersMapper);
+            _provider = new MessageModelSqlServerProvider(connectionString, parametersMapper);
             _resultMapper = new MessageModelToMessageGetResultMapper();
         }
 
