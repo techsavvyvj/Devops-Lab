@@ -9,13 +9,13 @@ namespace HelloWorld.API.Engine.Mappers
     /// <remarks>
     /// Use this to convert the MessageModel to the response body that is sent back to the api request.
     /// </remarks>
-    public class MessageModelToMessageGetResultMapper : IGenericMapper<MessageModel, MessageGetResultModel>
+    public class MessageModelToMessageQueryResultMapper : IGenericMapper<MessageModel, MessageQueryResultModel>
     {
-        public MessageGetResultModel Map(MessageModel message)
+        public MessageQueryResultModel Map(MessageModel message)
         {
-            var status = message == null ? MessageGetResultStatus.NoResults : MessageGetResultStatus.Ok;
+            var status = message == null ? MessageQueryResultStatus.NoResults : MessageQueryResultStatus.Ok;
 
-            return new MessageGetResultModel
+            return new MessageQueryResultModel
             {
                 ResultStatusCode = status,
                 ResultStatusText = status.ToString(),

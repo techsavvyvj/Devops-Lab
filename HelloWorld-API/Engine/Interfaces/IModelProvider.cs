@@ -12,9 +12,9 @@ namespace HelloWorld.API.Engine.Interfaces
     /// <typeparam name="T"></typeparam>
     public interface IModelProvider<T>
     {
-        bool Create(T message);
+        bool Create(T item);
         IEnumerable<T> Read(IQueryParametersModel queryParametersModel);
-        bool Update(T message);
-        bool Delete(T message);
+        bool Update(T item);
+        bool Delete(T item);
     }
 }

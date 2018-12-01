@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using Console = System.Console;
 
 namespace HelloWorld_ConsoleClient
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             try
             {
@@ -68,7 +64,7 @@ namespace HelloWorld_ConsoleClient
                 {
                     var failResult = response.Result.Content.ReadAsAsync<ErrorGetResultModel>().Result;
 
-                    Console.WriteLine($"Request failed: {response.Result.Content} ({(int)response.Result.StatusCode})");
+                    Console.WriteLine($"Request failed: {response.Result.ReasonPhrase} ({(int)response.Result.StatusCode})");
 
                     throw new Exception($"Remote failure message: {failResult.ExceptionMessage}");
                 }

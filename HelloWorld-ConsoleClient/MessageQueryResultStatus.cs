@@ -1,9 +1,9 @@
-﻿namespace HelloWorld.API.Engine
+﻿namespace HelloWorld_ConsoleClient
 {
     /// <summary>
     /// The different statuses a request for a Message may have.
     /// </summary>
-    public enum MessageGetResultStatus
+    public enum MessageQueryResultStatus
     {
         Ok = 0,
         NoResults = 1,
