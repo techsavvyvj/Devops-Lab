@@ -39,34 +39,38 @@ namespace HelloWorld_ConsoleClient
 
                 if (response.Result.IsSuccessStatusCode)
                 {
-                    var result = response.Result.Content.ReadAsAsync<MessageGetResultModel>().Result;
+                    var successResult = response.Result.Content.ReadAsAsync<MessageGetResultModel>().Result;
 
-                    if (result == null)
+                    if (successResult == null)
                     {
                         throw new Exception("Unable to deserialize response into MessageGetResultModel");
                     }
 
-                    if (result.ResultStatusCode == MessageGetResultStatus.Error)
+                    if (successResult.ResultStatusCode == MessageGetResultStatus.Error)
                     {
                         throw new Exception("An error was thrown at the API endpoint");
                     }
 
-                    if (result.ResultStatusCode == MessageGetResultStatus.NoResults)
+                    if (successResult.ResultStatusCode == MessageGetResultStatus.NoResults)
                     {
                         throw new Exception("No message was found for the given API key");
                     }
 
-                    if (result.Message == null)
+                    if (successResult.Message == null)
                     {
                         throw new Exception("No error thrown by endpoint but message was missing");
                     }
 
-                    Console.WriteLine($"Message received from endpoint: {result.Message.Message}");
-                    Console.WriteLine($"Message Mode: {result.Message.Mode}");
+                    Console.WriteLine($"Message received from endpoint: {successResult.Message.Message}");
+                    Console.WriteLine($"Message Mode: {successResult.Message.Mode}");
                 }
                 else
                 {
-                    throw new Exception($"Request failed: {response.Result.ReasonPhrase} ({response.Result.StatusCode})");
+                    var failResult = response.Result.Content.ReadAsAsync<ErrorGetResultModel>().Result;
+
+                    Console.WriteLine($"Request failed: {response.Result.Content} ({(int)response.Result.StatusCode})");
+
+                    throw new Exception($"Remote failure message: {failResult.ExceptionMessage}");
                 }
 
             }

@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorGetResultModel.cs" />
     <Compile Include="MessageGetResultModel.cs" />
     <Compile Include="MessageGetResultStatus.cs" />
     <Compile Include="MessageModel.cs" />
