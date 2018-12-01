@@ -179,11 +179,11 @@
     <Compile Include="Engine\Interfaces\IQueryParametersModel.cs" />
     <Compile Include="Engine\MessageModelSqlServerProvider.cs" />
     <Compile Include="Engine\Mappers\MessageQueryModelToDynamicParametersMapper.cs" />
-    <Compile Include="Engine\Models\MessageGetResultModel.cs" />
+    <Compile Include="Engine\Models\MessageQueryResultModel.cs" />
     <Compile Include="Engine\Models\MessageModel.cs" />
     <Compile Include="Engine\Models\MessageQueryParametersModel.cs" />
-    <Compile Include="Engine\Mappers\MessageModelToMessageGetResultMapper.cs" />
-    <Compile Include="Engine\MessageGetResultStatus.cs" />
+    <Compile Include="Engine\Mappers\MessageModelToMessageQueryResultMapper.cs" />
+    <Compile Include="Engine\MessageQueryResultStatus.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

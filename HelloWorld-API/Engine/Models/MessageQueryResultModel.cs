@@ -10,14 +10,14 @@ namespace HelloWorld.API.Engine.Models
     /// </summary>
     public class MessageQueryResultModel
     {
-        public MessageGetResultStatus ResultStatusCode { get; set; }
+        public MessageQueryResultStatus ResultStatusCode { get; set; }
         public string ResultStatusText { get; set; }
         public MessageModel Message { get; set; }
         public Exception Exception { get; set; }
 
         public MessageQueryResultModel()
         {
-            ResultStatusCode = MessageGetResultStatus.Ok;
+            ResultStatusCode = MessageQueryResultStatus.Ok;
             ResultStatusText = "Ok";
             Message = null;
             Exception = null;

@@ -64,8 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorGetResultModel.cs" />
-    <Compile Include="MessageGetResultModel.cs" />
-    <Compile Include="MessageGetResultStatus.cs" />
+    <Compile Include="MessageQueryResultModel.cs" />
+    <Compile Include="MessageQueryResultStatus.cs" />
     <Compile Include="MessageModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

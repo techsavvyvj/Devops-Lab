@@ -25,7 +25,7 @@ namespace HelloWorld.API.Engine
                 .Named("connectionString");
 
             kernel.Bind<IModelProvider<MessageModel>>().To<MessageModelSqlServerProvider>();
-            kernel.Bind<IGenericMapper<MessageModel, MessageGetResultModel>>().To<MessageModelToMessageGetResultMapper>();
+            kernel.Bind<IGenericMapper<MessageModel, MessageQueryResultModel>>().To<MessageModelToMessageQueryResultMapper>();
 
             kernel.Bind<IGenericMapper<MessageQueryParametersModel, DynamicParameters>>().To<MessageQueryModelToDynamicParametersMapper>();
         }

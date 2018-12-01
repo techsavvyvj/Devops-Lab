@@ -12,12 +12,12 @@ namespace HelloWorld.API.Controllers
     public class MessageController : ApiController
     {
         private readonly IModelProvider<MessageModel> _messageProvider;
-        private readonly IGenericMapper<MessageModel, MessageGetResultModel> _messageModelResultMapper;
+        private readonly IGenericMapper<MessageModel, MessageQueryResultModel> _messageModelResultMapper;
 
         public MessageController
         (
             IModelProvider<MessageModel> messageProvider,
-            IGenericMapper<MessageModel, MessageGetResultModel> messageModelResultMapper
+            IGenericMapper<MessageModel, MessageQueryResultModel> messageModelResultMapper
         )
         {
             _messageProvider = messageProvider;

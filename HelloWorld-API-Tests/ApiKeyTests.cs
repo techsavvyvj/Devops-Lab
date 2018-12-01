@@ -17,7 +17,7 @@ namespace HelloWorld.API.Tests
     {
         private readonly IConfigurationRoot _config;
         private readonly MessageModelSqlServerProvider _provider;
-        private readonly MessageModelToMessageGetResultMapper _resultMapper;
+        private readonly MessageModelToMessageQueryResultMapper _resultMapper;
 
         public ApiKeyTests()
         {
@@ -31,7 +31,7 @@ namespace HelloWorld.API.Tests
             var parametersMapper = new MessageQueryModelToDynamicParametersMapper();
 
             _provider = new MessageModelSqlServerProvider(connectionString, parametersMapper);
-            _resultMapper = new MessageModelToMessageGetResultMapper();
+            _resultMapper = new MessageModelToMessageQueryResultMapper();
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace HelloWorld.API.Tests
             var parameters = new MessageQueryParametersModel {ApiKey = apiKey};
             var result = _resultMapper.Map(_provider.Read(parameters).FirstOrDefault());
 
-            Assert.Equal(MessageGetResultStatus.NoResults, result.ResultStatusCode);
+            Assert.Equal(MessageQueryResultStatus.NoResults, result.ResultStatusCode);
             Assert.Null(result.Message);
         }
 
@@ -86,8 +86,8 @@ namespace HelloWorld.API.Tests
             var consoleResult = _resultMapper.Map(_provider.Read(parametersConsole).FirstOrDefault());
             var webResult = _resultMapper.Map(_provider.Read(parametersWeb).FirstOrDefault());
 
-            Assert.Equal(MessageGetResultStatus.Ok, consoleResult.ResultStatusCode);
-            Assert.Equal(MessageGetResultStatus.Ok, webResult.ResultStatusCode);
+            Assert.Equal(MessageQueryResultStatus.Ok, consoleResult.ResultStatusCode);
+            Assert.Equal(MessageQueryResultStatus.Ok, webResult.ResultStatusCode);
             Assert.NotNull(consoleResult.Message);
             Assert.NotNull(webResult.Message);
         }

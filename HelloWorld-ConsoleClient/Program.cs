@@ -35,19 +35,19 @@ namespace HelloWorld_ConsoleClient
 
                 if (response.Result.IsSuccessStatusCode)
                 {
-                    var successResult = response.Result.Content.ReadAsAsync<MessageGetResultModel>().Result;
+                    var successResult = response.Result.Content.ReadAsAsync<MessageQueryResultModel>().Result;
 
                     if (successResult == null)
                     {
                         throw new Exception("Unable to deserialize response into MessageGetResultModel");
                     }
 
-                    if (successResult.ResultStatusCode == MessageGetResultStatus.Error)
+                    if (successResult.ResultStatusCode == MessageQueryResultStatus.Error)
                     {
                         throw new Exception("An error was thrown at the API endpoint");
                     }
 
-                    if (successResult.ResultStatusCode == MessageGetResultStatus.NoResults)
+                    if (successResult.ResultStatusCode == MessageQueryResultStatus.NoResults)
                     {
                         throw new Exception("No message was found for the given API key");
                     }
