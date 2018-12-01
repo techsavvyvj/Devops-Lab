@@ -18,10 +18,10 @@ Ninject is used as an IoC container and Dapper is used as the ORM. Requests shou
 
 ### API Tests
 
-Three unit tests are here which tests
+Three unit tests are here which test
 * proper key lengths
 * invalid keys receive a "not found" status
-* valid keys receive an "ok" status.
+* valid keys receive an "ok" status
 
 ### Console Client
 
