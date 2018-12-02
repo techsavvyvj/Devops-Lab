@@ -19,6 +19,8 @@ function () {
     var fetched = function(data) {
         var message = _mapper.map(data);
 
+        // todo: add error handling in the future for null message from mapper
+
         vue.message = message.Message;
         vue.mode = message.Mode;
         vue.loading = false;

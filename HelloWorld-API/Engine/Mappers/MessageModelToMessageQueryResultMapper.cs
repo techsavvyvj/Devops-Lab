@@ -4,7 +4,7 @@ using HelloWorld.API.Engine.Models;
 namespace HelloWorld.API.Engine.Mappers
 {
     /// <summary>
-    /// Maps a MessageModel to a MessageGetResultModel.
+    /// Maps a MessageModel to a MessageQueryResultModel.
     /// </summary>
     /// <remarks>
     /// Use this to convert the MessageModel to the response body that is sent back to the api request.

@@ -22,7 +22,7 @@ namespace HelloWorld.API.Engine
                 .Bind<string>()
                 .ToMethod(context => ConfigurationManager.ConnectionStrings["default"].ConnectionString)
                 .WhenInjectedInto<MessageModelSqlServerProvider>()
-                .Named("connectionString");
+                .WithConstructorArgument("connectionString");
 
             kernel.Bind<IModelProvider<MessageModel>>().To<MessageModelSqlServerProvider>();
             kernel.Bind<IGenericMapper<MessageModel, MessageQueryResultModel>>().To<MessageModelToMessageQueryResultMapper>();

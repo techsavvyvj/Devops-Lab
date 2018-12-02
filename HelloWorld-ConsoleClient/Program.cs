@@ -39,7 +39,7 @@ namespace HelloWorld.ConsoleClient
 
                     if (successResult == null)
                     {
-                        throw new Exception("Unable to deserialize response into MessageGetResultModel");
+                        throw new Exception("Unable to deserialize response into MessageQueryResultModel");
                     }
 
                     if (successResult.ResultStatusCode == MessageQueryResultStatus.Error)
