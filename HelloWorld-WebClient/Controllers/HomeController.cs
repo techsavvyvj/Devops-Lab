@@ -11,7 +11,7 @@ namespace HelloWorldSample.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "New Changes";
             ViewBag.ApiEndpoint = ConfigurationManager.AppSettings["apiEndpoint"];
             ViewBag.ApiKey = ConfigurationManager.AppSettings["apiKey"];
 
